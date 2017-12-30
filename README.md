@@ -1,5 +1,7 @@
 # NgramCNN
 A Ngram based convolution neural network for graph objects classification.
+The major idea of this approach is normalizing the graph objects and applying the specific convolutional neural layers to extract the subgraph structures from graph objects.
+Those subgraph structures can be quite complicated while provide great contribution in classification task.
 
 Here is the websize http://www.bruceluo.net/ngramcnn.html.
 
