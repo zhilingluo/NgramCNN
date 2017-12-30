@@ -85,16 +85,17 @@ Nvidia GeForce 1080 and titanX are suggested configuration.
 ## REFERENCE
 
 Please cite our publication if you'd like to use our code (for comparison and promotion).
-    @article{luo2017deep,
-      title={Deep Learning of Graphs with Ngram Convolutional Neural Networks},
-      author={Luo, Zhiling and Liu, Ling and Yin, Jianwei and Li, Ying and Wu, Zhaohui},
-      journal={IEEE Transactions on Knowledge and Data Engineering},
-      volume={29},
-      number={10},
-      pages={2125--2139},
-      year={2017},
-      publisher={IEEE}
-    }
+
+        @article{luo2017deep,
+          title={Deep Learning of Graphs with Ngram Convolutional Neural Networks},
+          author={Luo, Zhiling and Liu, Ling and Yin, Jianwei and Li, Ying and Wu, Zhaohui},
+          journal={IEEE Transactions on Knowledge and Data Engineering},
+          volume={29},
+          number={10},
+          pages={2125--2139},
+          year={2017},
+          publisher={IEEE}
+        }
 
 
 ## CONTACT
