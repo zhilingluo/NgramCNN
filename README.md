@@ -6,11 +6,12 @@ Those subgraph structures can be quite complicated while provide great contribut
 Here is the websize http://www.bruceluo.net/ngramcnn.html.
 
 ## FILES
-NgramCNN source code package contains four files and four folders.
+NgramCNN source code package contains following files and folders.
 
 * ngramcnn.py
 * ngramcnn_utils.py
 * kdd_datasets/
+* format_tools/
 * bufferdata/
 * logdata/
 
@@ -42,7 +43,7 @@ python ngramcnn.py <datasetname> 1 <kernel_width>
 ```
 In this script, the first arg is the dataset name, see folder "kdd_datasets".
 
-The second arg denotes current operation is preprcessing.
+The second arg denotes current operation is pre-prcessing.
 
 The third arg denotes the kernel size, namely the n in ngram.
 
@@ -56,14 +57,14 @@ python ngramcnn.py ptc 1 7
 Training
 -
 ```bash
-python ngramcnn.py <datasetname> 2 <kernel_width> <batch_size> <diag_kernel_num> <conv_kernel_size> <conv_kernel_num> <epoch_num> <dropout_ratio>
+python ngramcnn.py <dataset_name> 2 <kernel_width> <batch_size> <diag_kernel_num> <conv_kernel_size> <conv_kernel_num> <epoch_num> <dropout_ratio>
 ```
 
-In training, the batch_size means the minibatch size used in training.
+In training, the batch_size means the mini-batch size used in training.
 
-diag_kernel_num means the number of kernels in diagonal convoltion.
+diag_kernel_num means the number of kernels in diagonal convolution.
 
-conv_kernel_size and conv_kernel_num denote the kernel size and number in rest convoltion layers, resp.
+conv_kernel_size and conv_kernel_num denote the kernel size and number in rest convolution layers, resp.
 
 epoch_num denotes the max epoch iteration number.
 
@@ -81,6 +82,29 @@ Windows OS may not support some OS commands and you can just remove those codes.
 In default, the GPU is required.
 
 Nvidia GeForce 1080 and titanX are suggested configuration.
+
+## FORMAT
+
+The default format for NgramCNN is .Graph which is a python data file dumped by pickle.
+For this format, we prepared some tools to load data from other formats.
+Currently, two formats are supported: SDF and NEL.
+You can convert you own data by following steps:
+
+step 1:
+Copy your data file, either in sdf or nel format, in format_tools/
+```bash
+cp <datafile> format_tools/
+```
+Note that <datafile> should contain the suffix.
+For example, mutag.nel instead of mutag.
+
+step 2:
+Move into format_tools folder and convert format:
+```bash
+cd format_tools/
+python nel2graph.py -d <datafile>
+```
+The generated file will be stored at kdd_datasets/
 
 
 
